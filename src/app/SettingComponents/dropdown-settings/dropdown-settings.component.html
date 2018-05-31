@@ -1,0 +1,23 @@
+<div class="body">
+  <h4 class="header">Tekst</h4>
+  <table class="settingsTable">
+    <tr>
+      <td class="settingsLabel">Placeholder</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <input #p (change)="changePlaceholder(p.value)" matInput [value]="placeholder">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td class="settingsLabel">Items</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <textarea #i matInput (change)="changeItems(i.value)" [value]="items"></textarea>
+          <mat-hint align="start"><strong>Items scheiden door een komma</strong></mat-hint>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table> 
+  <app-remove [component]="dropdownComp.componentRef"></app-remove>
+</div>

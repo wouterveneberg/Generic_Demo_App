@@ -1,0 +1,63 @@
+<div class="body">
+  <h4 class="header">Tekst</h4>
+  <table class="settingsTable">
+    <tr>
+      <td class="settingsLabel">Titel</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <input #t (change)="changeTitle(t.value)" matInput [value]="title">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td class="settingsLabel">Subtitel</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <input #sub (change)="changeSubtitle(sub.value)" matInput [value]="subtitle">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td class="settingsLabel">Inhoud</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <textarea #c (change)="changeContent(c.value)" matInput [value]="content"></textarea>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table> 
+  <h4 class="header">Plaatje</h4>
+  <table class="settingsTable">
+    <tr>
+      <td class="settingsLabel">Uploaden</td>
+      <td class="settingsValue">
+        <mat-button-toggle-group [value]="selectedUploadOption" (change)="changeUploadOption($event.source.value)">
+          <mat-button-toggle value="imgUpload">
+            <mat-icon>add_photo_alternate</mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle value="imgUrl">
+            <mat-icon>link</mat-icon>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" *ngIf="selectedUploadOption == 'imgUpload'">
+        <mat-form-field class="fileName">
+          <input matInput [value]="avatarName">
+        </mat-form-field>
+        <button mat-raised-button (click)="i.click()" color="primary">
+          <mat-icon>add_photo_alternate</mat-icon>
+          <input #i (change)="uploadImage($event)" accept="image/*" type="file" placeholder="Upload plaatje" size="60">
+        </button>
+      </td>
+      <td colspan="2" *ngIf="selectedUploadOption == 'imgUrl'">
+        <mat-form-field class="imgUrl">
+          <input #tbImageUrl matInput [value]="avatar" (change)="changeImageUrl(tbImageUrl.value)">
+          <mat-hint align="start"><strong>bv. https://www.google.nl</strong></mat-hint>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <app-remove [component]="cardComp.componentRef"></app-remove>
+</div>

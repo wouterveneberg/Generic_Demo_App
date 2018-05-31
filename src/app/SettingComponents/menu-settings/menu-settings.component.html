@@ -1,0 +1,33 @@
+<div class="body">
+  <h4 class="header">Tabinstellingen</h4>
+  <table class="settingsTable">
+    <tr>
+      <td class="settingsLabel">Titel</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <input #i (change)="changeName(linkName, i.value)" matInput  value="{{linkName}}">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+        <td class="settingsLabel">Pagina</td>
+        <td class="settingsValue">
+          <mat-form-field>
+            <mat-select #t (change)="setPageLink(t.value)" [(value)]="selected">
+              <mat-option *ngFor="let o of pages" [value]="o.id">{{o.pageName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td class="settingsLabel">Verplaats tab</td>
+        <td class="settingsValue" align="right">
+          <button mat-raised-button color="primary" (click)="moveMenuItem(-1)" [disabled]="disabledLeftButton"><mat-icon>keyboard_arrow_left</mat-icon></button>
+          <button mat-raised-button color="primary" (click)="moveMenuItem(1)" [disabled]="disabledRightButton"><mat-icon>keyboard_arrow_right</mat-icon></button>
+        </td>
+      </tr>
+  </table>
+  <hr>
+  <button mat-raised-button color="primary" class="addButton" (click)="addMenuItem()">Voeg tab toe</button>
+  <button mat-raised-button color="primary" class="addButton" (click)="removeMenuItem()">Verwijder tab</button>
+</div>

@@ -1,0 +1,97 @@
+<div class="body">
+  <h4 class="header">Tekst</h4>
+  <table class="settingsTable">
+    <tr *ngIf="componentInstance?.placeholder != undefined">
+      <td class="settingsLabel">Placeholder</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <input #i (change)="changePlaceholder(i.value)" matInput  value="{{placeholder}}">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr *ngIf="componentInstance?.text != undefined">
+      <td class="settingsLabel">Tekst</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <input #t (change)="changeText(t.value)" matInput  value="{{text}}">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td class="settingsLabel">Tekstpositie</td>
+      <td class="settingsValue">
+        <mat-button-toggle-group [value]="selectedTextAlign" (change)="addStyling('text-align', $event.source.value)">
+          <mat-button-toggle value="left">
+            <mat-icon>format_align_left</mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle value="center">
+            <mat-icon>format_align_center</mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle value="right">
+            <mat-icon>format_align_right</mat-icon>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </td>
+    </tr>
+  </table>
+  <hr>
+  <h4 class="header">Styling</h4>
+  <table class="settingsTable">
+    <tr>
+      <td class="settingsLabel">Tekstkleur</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <mcc-color-picker hideTransparentUsedColors [selectedColor]="selectedColor" (selected)="addStyling('color',$event); selectedColor=$event"></mcc-color-picker>
+          <input matInput readonly="true" value="{{selectedColor}}">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td class="settingsLabel">Achtergrondkleur</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <mcc-color-picker hideTransparentUsedColors [selectedColor]="selectedBackgroundColor" (selected)="addStyling('background-color',$event); selectedBackgroundColor=$event"></mcc-color-picker>
+          <input matInput readonly="true" value="{{selectedBackgroundColor}}">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr *ngIf="componentObject?.component == 'ButtonComponent'">
+        <td class="settingsLabel">Breedte</td>
+        <td class="settingsValue">
+          <mat-form-field>
+            <mat-select [value]="selectedWidth" (selectionChange)="addWidthStyling($event.value)">
+              <mat-option value="button-inline-width">Volle breedte</mat-option>
+              <mat-option value="button-text-width">Tekst breedte</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr *ngIf="componentObject?.component == 'ButtonComponent'">
+        <td class="settingsLabel">Link</td>
+        <td class="settingsValue">
+          <mat-button-toggle-group [value]="selectedLinkOption" (change)="changeLinkOption($event.source.value)">
+            <mat-button-toggle value="page">
+              <mat-icon>insert_drive_file</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="url">
+              <mat-icon>insert_link</mat-icon>
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </td>
+      </tr>
+      <tr *ngIf="componentObject?.component == 'ButtonComponent'">
+        <td colspan="2">
+          <mat-form-field *ngIf="selectedLinkOption == 'page'">
+            <mat-select [value]="linkUrl" (selectionChange)="changeLinkUrl($event.value)">
+              <mat-option value="">Geen link</mat-option>
+              <mat-option *ngFor="let p of pages" [value]="p.id">{{p.pageName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field *ngIf="selectedLinkOption == 'url'">
+            <input #s (change)="changeLinkUrl(s.value)" type="url" matInput value="{{linkUrl}}">
+          </mat-form-field>
+        </td>
+      </tr>
+  </table>
+  <app-remove [component]="componentInstance.componentRef"></app-remove>
+</div>

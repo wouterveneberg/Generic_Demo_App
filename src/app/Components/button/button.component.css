@@ -1,0 +1,13 @@
+.button-inline-width {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.button-text-width {
+    float: left;
+}
+
+.main {
+    margin: 5px 0;
+}

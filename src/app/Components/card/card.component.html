@@ -1,0 +1,12 @@
+<div (click)="openSettings()">
+  <mat-card [ngStyle]="styles">
+    <mat-card-header>
+      <img mat-card-avatar [src]="sanitizer.bypassSecurityTrustUrl(avatar)">
+      <mat-card-title>{{title}}</mat-card-title>
+      <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{content}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

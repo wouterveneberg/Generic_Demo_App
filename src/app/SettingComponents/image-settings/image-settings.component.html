@@ -1,0 +1,50 @@
+<div class="body">
+  <h4 class="header">Plaatje</h4>
+  <table class="settingsTable">
+      <tr>
+        <td class="settingsLabel">Uploaden</td>
+        <td class="settingsValue">
+          <mat-button-toggle-group [value]="selectedUploadOption" (change)="changeUploadOption($event.source.value)">
+            <mat-button-toggle value="imgUpload">
+              <mat-icon>add_photo_alternate</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="imgUrl">
+              <mat-icon>link</mat-icon>
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </td>
+    </tr>
+    <tr>
+      <td colspan="2" *ngIf="selectedUploadOption == 'imgUpload'">
+        <mat-form-field class="fileName">
+          <input matInput [value]="imageName">
+        </mat-form-field>
+        <button mat-raised-button (click)="i.click()" color="primary">
+          <mat-icon>add_photo_alternate</mat-icon>
+          <input #i (change)="uploadImage($event)" accept="image/*" type="file" placeholder="Upload plaatje" size="60">
+        </button>
+      </td>
+      <td colspan="2" *ngIf="selectedUploadOption == 'imgUrl'">
+        <mat-form-field class="imgUrl">
+          <input #tbImageUrl matInput [value]="image" (change)="changeImageUrl(tbImageUrl.value)">
+          <mat-hint align="start"><strong>bv. https://www.google.nl</strong></mat-hint>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <hr/>
+  <h4 class="header">Style</h4>
+  <table class="settingsTable">
+      <tr>
+        <td class="settingsLabel">Grootte</td>
+        <td class="settingsValue">
+          <mat-form-field class="imageWidth">
+            <input #w matInput [value]="width" (change)="addStyling('width', w.value)" [formControl]="widthControl">
+          </mat-form-field>
+          %
+          <mat-error *ngIf="this.widthControl.invalid">{{getErrorMessage()}}</mat-error>
+        </td>
+    </tr>
+  </table>
+  <app-remove [component]="componentInstance.componentRef"></app-remove>
+</div>

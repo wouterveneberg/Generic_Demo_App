@@ -1,0 +1,15 @@
+.body {
+    margin: 0 5px;
+    display: flex;
+}
+
+.mat-slider-horizontal {
+    flex-direction: row;
+    flex-grow: 1;
+    display: flex;
+}
+
+.number {
+    flex-direction: row;
+    margin-top: 15px;
+}

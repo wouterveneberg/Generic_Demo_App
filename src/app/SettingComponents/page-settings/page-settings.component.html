@@ -1,0 +1,26 @@
+<div class="body">
+  <h4 class="header">Pagina</h4>
+  <table class="settingsTable">
+    <tr>
+      <td class="settingsLabel">Titel</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <input #i (change)="changeTitle(i.value)" matInput  value="{{pageName}}">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <hr>
+  <h4 class="header">Styling</h4>
+  <table class="settingsTable">
+    <tr>
+      <td class="settingsLabel">Achtergrondkleur</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <mcc-color-picker hideTransparentUsedColors [selectedColor]="selectedBackColor" (selected)="addBackgroundColor($event); selectedBackColor=$event"></mcc-color-picker>
+          <input matInput readonly="true" value="{{selectedBackColor}}">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table> 
+</div>

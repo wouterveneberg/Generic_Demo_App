@@ -1,0 +1,19 @@
+input[type="file"] {
+    display: none;
+}
+
+.imgUrl {
+    width: 100%;
+}
+
+.fileName {
+    width: 76% !important;
+}
+
+.mat-button-toggle-checked {
+    color: cornflowerblue;
+}
+
+.imageWidth {
+    width: 20% !important;
+}

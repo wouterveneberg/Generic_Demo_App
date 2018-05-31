@@ -1,0 +1,46 @@
+#blank span {
+    background: url('../../assets/project-thumbnail-sprite.png') 0px 0px;
+    background-size: 100% auto;
+}
+
+#tabs span {
+    background: url('../../assets/project-thumbnail-sprite.png') 0px -222px;
+    background-size: 100% auto;
+}
+
+#sidemenu span {
+    background: url('../../assets/project-thumbnail-sprite.png') 0px -111px;
+    background-size: 100% auto;
+}
+
+#tabs_side span {
+    background: url('../../assets/project-thumbnail-sprite.png') 0px -333px;
+    background-size: 100% auto;
+}
+
+#blank, #sidemenu, #tabs, #tabs_side {
+    width: 133px;
+    height: 111px;
+    display: grid;
+    cursor: pointer;
+    grid-gap: 10px;
+}
+
+.selected {
+    background-color: #dce8fd;
+    border: 2px solid #4e8ef7;
+    cursor: pointer;
+}
+
+.menu-type {
+    width: 300px;
+    height: 300px;
+}
+
+.menu-type div:hover {
+    border: 2px solid blue;
+}
+
+.mat-form-field {
+    width: 100%;
+}

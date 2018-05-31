@@ -1,0 +1,42 @@
+<div class="body">
+  <h4 class="header">Tekst</h4>
+  <table class="settingsTable">
+    <tr>
+      <td class="settingsLabel">Grootte</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <mat-select [value]="selectedSize" (selectionChange)="changeSize($event.value)">
+            <mat-option value="H1"><h1>H1</h1></mat-option>
+            <mat-option value="H2"><h2>H2</h2></mat-option>
+            <mat-option value="H3"><h3>H3</h3></mat-option>
+            <mat-option value="H4"><h4>H4</h4></mat-option>
+            <mat-option value="H5"><h5>H5</h5></mat-option>
+            <mat-option value="H6"><h6>H6</h6></mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td class="settingsLabel">Tekst</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <input #t (change)="changeText(t.value)" matInput  value="{{text}}">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <hr/>
+  <h4 class="header">Styling</h4>
+  <table class="settingsTable">
+    <tr>
+      <td class="settingsLabel">Tekstkleur</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <mcc-color-picker hideTransparentUsedColors [selectedColor]="selectedFontColor" (selected)="addStyling('color',$event); selectedFontColor=$event"></mcc-color-picker>
+          <input matInput readonly="true" value="{{selectedFontColor}}">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <app-remove [component]="componentInstance.componentRef"></app-remove>
+</div>

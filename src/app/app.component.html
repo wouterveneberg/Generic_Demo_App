@@ -1,0 +1,76 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <mat-toolbar color="primary"><span style="margin: 0 auto;">{{title}}</span></mat-toolbar>
+  <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened="true" class="side-drawer">
+      <div>
+        <mat-toolbar class="sideToolbar">
+          <span>Pagina's</span>
+          <span class="example-spacer"></span>
+          <button mat-icon-button (click)="openNewPageDialog(false)" matTooltip="Voeg een pagina toe"><mat-icon>add</mat-icon></button>
+        </mat-toolbar>
+        <mat-nav-list class="nav-list">
+          <a mat-list-item (click)="openPage(page, i)" *ngFor="let page of pages; let i = index"> 
+            {{ page.pageName }} 
+            <mat-divider></mat-divider>
+          </a>
+        </mat-nav-list>
+      </div>
+      <div>
+        <mat-toolbar class="sideToolbar">
+          <span>Componenten</span>
+        </mat-toolbar>
+        <ul *ngIf="show">
+          <li *ngFor="let comp of components" draggable="true">
+            <a (click)="addComponent(comp.type)">
+              <div class="component-content">
+                <span class="icon" [ngClass]="comp.type"></span>
+                <span>{{comp.name}}</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </mat-drawer>
+    <div class="mobile-outline">
+      <div class="mobile-test">
+        <mat-drawer-container>
+          <mat-drawer #drawer class="example-sidenav" mode="side">
+            <mat-nav-list class="nav-list">
+              <a mat-list-item *ngFor="let page of beginTabs" (click)="openMenuSettings(page.name);"> 
+                {{ page.name }} 
+                <mat-divider></mat-divider>
+              </a>
+            </mat-nav-list>
+          </mat-drawer>
+      
+          <mat-toolbar *ngIf="currentPage != null" class="sideToolbar">
+            <button *ngIf="selectedMenu == 'sideNav'" mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+            <span>{{currentPage.pageName}}</span>
+          </mat-toolbar>
+          <div [ngClass]="selectedMenu == 'bottomNav' ? 'mobile-inline' : 'mobile-inline_bottom'">
+            <div  #container></div>
+          </div>
+          <footer *ngIf="show && (selectedMenu == 'bottomNav')">
+            <mat-toolbar class="bottomToolbar">
+              <mat-tab-group (selectedTabChange)="onTabChange($event);" headerPosition="below">
+                <mat-tab *ngFor="let page of beginTabs" label="{{page.name}}"></mat-tab>
+              </mat-tab-group>
+            </mat-toolbar>
+          </footer>
+        </mat-drawer-container>
+      </div>
+    </div>
+    <mat-drawer mode="side" align="end" opened="true" class="side-drawer">
+      <mat-toolbar class="sideToolbar">
+        <span>Instellingen</span>
+      </mat-toolbar>
+      <div #settings></div>
+      
+      <div class="bottom">
+        <hr>
+        <button mat-raised-button class="buttonRight" color="primary" (click)="saveToDatabase()">Opslaan</button>
+      </div>
+    </mat-drawer>
+  </mat-drawer-container>
+</div>

@@ -1,0 +1,15 @@
+<div>
+  <h2 mat-dialog-title>Voeg pagina toe</h2>
+
+  <mat-dialog-content [formGroup]="form">
+      <mat-form-field>
+        <input matInput placeholder="Naam" formControlName="name">
+        <mat-error *ngIf="this.form.controls['name'].invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="close()">Sluit</button>
+    <button mat-raised-button color="primary" (click)="save()">Opslaan</button>
+  </mat-dialog-actions>
+</div>

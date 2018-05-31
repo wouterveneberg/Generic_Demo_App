@@ -1,0 +1,38 @@
+<div class="body">
+  <h4 class="header">Slider</h4>
+  <table class="settingsTable">
+    <tr>
+      <td class="settingsLabel">Min</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <input #i1 type="number" (change)="changeMin(i1.value)" matInput  value="{{min}}">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td class="settingsLabel">Max</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <input #i2 type="number" (change)="changeMax(i2.value)" matInput  value="{{max}}">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td class="settingsLabel">Steps</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <input #i3 type="number" (change)="changeSteps(i3.value)" matInput  value="{{steps}}">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td class="settingsLabel">Beginwaarde</td>
+      <td class="settingsValue">
+        <mat-form-field>
+          <input #i4 type="number" (change)="changeValue(i4.value)" matInput  value="{{value}}">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table> 
+  <app-remove [component]="sliderComp.componentRef"></app-remove>
+</div>

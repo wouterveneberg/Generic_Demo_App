@@ -1,0 +1,8 @@
+<div (click)="openSettings()" [ngSwitch]="size">
+  <h1 [ngStyle]="styles" *ngSwitchCase="'H1'">{{text}}</h1>
+  <h2 [ngStyle]="styles" *ngSwitchCase="'H2'">{{text}}</h2>
+  <h3 [ngStyle]="styles" *ngSwitchCase="'H3'">{{text}}</h3>
+  <h4 [ngStyle]="styles" *ngSwitchCase="'H4'">{{text}}</h4>
+  <h5 [ngStyle]="styles" *ngSwitchCase="'H5'">{{text}}</h5>
+  <h6 [ngStyle]="styles" *ngSwitchCase="'H6'">{{text}}</h6>
+</div>

@@ -1,0 +1,35 @@
+<div>
+  <h2 mat-dialog-title>Maak applicatie aan</h2>
+
+  <mat-dialog-content [formGroup]="form">
+    <mat-form-field hintLabel="Minimaal 3 karakters">
+      <input matInput placeholder="Naam" formControlName="name" required nameValidator minlength="3">
+      <mat-error *ngIf="this.form.controls['name'].invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <label>Kies een type:</label>
+    <div class="menu-type">
+      <mat-grid-list cols="2" rowHeight="140px">
+        <mat-grid-tile><div [ngClass]="{selected: selectedIndex == 1}" (click)="click(1)" id="blank"><span></span></div></mat-grid-tile>
+        <mat-grid-tile><div [ngClass]="{selected: selectedIndex == 2}" (click)="click(2)" id="tabs"><span></span></div></mat-grid-tile>
+        <mat-grid-tile><div [ngClass]="{selected: selectedIndex == 3}" (click)="click(3)" id="sidemenu"><span></span></div></mat-grid-tile>
+        <mat-grid-tile><div [ngClass]="{selected: selectedIndex == 4}" (click)="click(4)" id="tabs_side"><span></span></div></mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <mat-error *ngIf="errorMessage">Geen type gekozen</mat-error>
+    <button mat-raised-button type="submit" color="primary" (click)="save()">Opslaan</button>
+  </mat-dialog-content>
+  <hr>
+  <h2 mat-dialog-title>of kies een bestaande applicatie</h2>
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-select placeholder="Applicatie" [formControl]="selected" [(ngModel)]="selectedName">
+        <mat-option *ngFor="let name of applicationNames" [value]="name.appName">
+          {{ name.appName }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="selected.hasError('required')">Er is geen applicatie gekozen!</mat-error>
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary" (click)="open()">Openen</button>
+  </mat-dialog-content>
+</div>

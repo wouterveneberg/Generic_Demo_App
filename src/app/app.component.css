@@ -1,0 +1,226 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.side-drawer {
+    width:25%;
+}
+
+.sideToolbar {
+    height: 44px;
+}
+
+.nav-list {
+    height: calc((100vh - 64px)/3);
+}
+
+mat-nav-list {
+    flex-grow: 1;
+    overflow: auto;
+    position: relative;
+}
+
+.example-container {
+    height: calc(100vh - 64px);
+}
+
+.mobile-outline {
+    margin: auto;
+    height: calc(100vh - 64px);
+    width: 369px;
+    background-image: url("/assets/Iphone Outline.png");
+    background-repeat: no-repeat;
+}
+
+.mobile-test {
+    top: 117px;
+    left: 23px;
+    height: 482px;
+    width: 322px;
+    z-index: 2;
+    position: relative;
+    overflow: auto;
+    flex-grow: 1;
+}
+
+.mobile-inline {
+    width: 100%;
+    height: calc(482px - 49px - 44px);
+    overflow: auto;
+}
+
+.mobile-inline_bottom {
+    width: 100%;
+    height: calc(100% - 44px);
+    overflow: auto;
+}
+
+mat-tab-group {
+    width: 100%;
+}
+
+/deep/ .mat-tab-label {
+    min-width: 0 !important;
+    padding: 0 20px;
+}
+
+.bottomToolbar p {
+    font-size: 12px;
+}
+
+.bottomToolbar {
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 100%;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.buttonRight {
+    float: right;
+    margin-right: 5px;
+}
+
+.mobile-test mat-drawer-container {
+    height: 100%;
+}
+
+p {
+    text-align: center;
+    margin: 20px 0 60px;
+    font-size: 1.25em;
+    color: #73AF55;
+}
+
+ul {
+    padding-left: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+    margin: auto;
+    width: 372px;
+}
+
+ul li {
+    max-width: 122px;
+    width: 122px;
+    height: 106px;
+    margin-right: 2px;
+    list-style: none;
+    line-height: 96px;
+    margin-left: 0;
+    position: relative;
+}
+
+ul li a {
+    color: #616774;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.component-content {
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+ul li a .icon {
+    width: 90px;
+    height: 20px;
+    display: block;
+    margin: 22px auto 0;
+    position: relative;
+}
+
+ul li a .icon::before, ul li a .icon::after {
+    background: no-repeat transparent center top url("/assets/components-sprite.png");
+    background-size: 90px;
+    width: 90px;
+    height: 50px;
+    left: 0;
+    content: '';
+    position: absolute;
+    transition-property: opacity, transform;
+    transform: scale3d(1, 1, 1);
+    transition-duration: .25s;
+    transition-timing-function: linear, cubic-bezier(0.33, 2, 0.66, 1);
+}
+
+ul li a .ButtonComponent::before {
+    background-position: center -100px;
+}
+
+ul li a .ButtonComponent::after {
+    background-position: center -150px;
+}
+
+ul li a .CardComponent::before {
+    background-position: center -200px;
+}
+
+ul li a .CardComponent::after {
+    background-position: center -250px;
+}
+
+ul li a .HeaderComponent::before {
+    background-position: center -700px;
+}
+
+ul li a .HeaderComponent::after {
+    background-position: center -750px;
+}
+
+ul li a .ImageComponent::before {
+    background-position: center -900px;
+}
+
+ul li a .ImageComponent::after {
+    background-position: center -950px;
+}
+
+ul li a .TextboxComponent::before {
+    background-position: center -1000px;
+}
+
+ul li a .TextboxComponent::after {
+    background-position: center -1050px;
+}
+
+ul li a .SliderComponent::before {
+    background-position: center -1700px;
+}
+
+ul li a .SliderComponent::after {
+    background-position: center -1750px;
+}
+
+ul li a .DropdownComponent::before {
+    background-position: center -1900px;
+}
+
+ul li a .DropdownComponent::after {
+    background-position: center -1950px;
+}
+
+ul li a .icon:after {
+    opacity: 0;
+}
+
+ul li a:hover {
+    color: #2E3136; }
+    ul li a:hover .icon:before,
+    ul li a:hover .icon:after {
+      transform: scale3d(1.15, 1.15, 1); }
+    ul li a:hover .icon:after {
+      opacity: 1; }
+    ul li a:active .icon:before, ul li a:active .icon:after {
+    transform: scale3d(1.1, 1.1, 1); 
+}
+

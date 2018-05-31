@@ -1,0 +1,9 @@
+<div (click)="openSettings()">
+  <mat-form-field>
+    <mat-select [ngStyle]="styles" [placeholder]="placeholder">
+      <mat-option *ngFor="let item of items" [value]="item">
+        {{ item }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
