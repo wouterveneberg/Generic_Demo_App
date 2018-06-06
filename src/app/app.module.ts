@@ -16,7 +16,6 @@ import { TextboxComponent } from './Components/textbox/textbox.component';
 import { NewApplicationComponent } from './new-application/new-application.component';
 import { ServerconnectionService } from './serverconnection.service';
 import { HttpClientModule } from '@angular/common/http';
-import { BottomBarModule } from 'bottombar-component';
 import { MenuSettingsComponent } from './SettingComponents/menu-settings/menu-settings.component';
 import { UniqueNameValidator } from './Validators/UniqueNameValidator';
 import { ComponentSettingsComponent } from './SettingComponents/component-settings/component-settings.component';
@@ -98,7 +97,6 @@ export const appRoutes: Routes = [
       empty_color: '#000'
     }),
     HttpClientModule,
-    BottomBarModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [Configuration, ServerconnectionService],
