@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseComponent } from '../../Objects/BaseComponent';
-import { SliderComponent } from '../../components/slider/slider.component';
+import { SliderComponent } from '../../Components/slider/slider.component';
 
 @Component({
   selector: 'app-slider-settings',

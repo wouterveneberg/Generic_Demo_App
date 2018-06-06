@@ -4,7 +4,7 @@ import { Page } from "./Objects/PageObject";
 import { AppComponent } from "./app.component";
 import { BaseComponent } from "./Objects/BaseComponent";
 import { BaseComponentComponent } from "./base-component/base-component.component";
-import { SliderComponent } from "./components/slider/slider.component";
+import { SliderComponent } from "./Components/slider/slider.component";
 import { ImageComponent } from "./Components/image/image.component";
 import { HeaderComponent } from "./Components/header/header.component";
 import { DropdownComponent } from "./Components/dropdown/dropdown.component";
