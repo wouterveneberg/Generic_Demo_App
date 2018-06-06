@@ -4,7 +4,6 @@ import { BaseComponent } from '../Objects/BaseComponent';
 import { TextboxComponent } from '../Components/textbox/textbox.component';
 import { BaseComponentComponent } from '../base-component/base-component.component';
 import { Configuration } from '../configuration';
-import { NavTab } from 'bottombar-component';
 import { Menu } from '../Objects/MenuObject';
 import { MatTabChangeEvent } from '@angular/material';
 import { ButtonComponent } from '../Components/button/button.component';
