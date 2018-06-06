@@ -7,7 +7,7 @@
         <mat-toolbar class="sideToolbar">
           <span>Pagina's</span>
           <span class="example-spacer"></span>
-          <button mat-icon-button (click)="openNewPageDialog(false)" matTooltip="Voeg een pagina toe"><mat-icon>add</mat-icon></button>
+          <button mat-icon-button (click)="openNewPageDialog()" matTooltip="Voeg een pagina toe"><mat-icon>add</mat-icon></button>
         </mat-toolbar>
         <mat-nav-list class="nav-list">
           <a mat-list-item (click)="openPage(page, i)" *ngFor="let page of pages; let i = index"> 

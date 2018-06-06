@@ -3,7 +3,7 @@ import { MenuItem } from "./Menu-ItemObject";
 
 export class Menu {
 
-    private menuType : string;
+    menuType : string;
     private menuItems = Array<MenuItem>();
 
     constructor(type: string, newApplication?: boolean) {

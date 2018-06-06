@@ -22,7 +22,7 @@ export class CardComponent implements BaseComponentComponent {
   avatar: string;
   avatarName: string;
 
-  constructor(private conf: Configuration, private sanitizer: DomSanitizer) { }
+  constructor(private conf: Configuration, public sanitizer: DomSanitizer) { }
 
   setAttributes(comp, compRef) {
     this.componentInstace = comp;

@@ -27,7 +27,8 @@ export class Configuration {
      * @param appName ApplicationComponent
      */
     public addApplication(appName) {
-        this.app = new ApplicationComponent(appName);
+        this.app = new ApplicationComponent();
+        this.app.setName(appName);
     }
 
     /**

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PageComponent } from '../page/page.component';
 import { Menu } from '../Objects/MenuObject';
 
@@ -7,17 +7,16 @@ import { Menu } from '../Objects/MenuObject';
   templateUrl: './application.component.html',
   styleUrls: ['./application.component.css']
 })
-export class ApplicationComponent implements OnInit {
+export class ApplicationComponent {
 
   private appName: string;
   private pages = [];
   private menu: Menu;
 
-  constructor(name: string) { 
-    this.appName = name;
-  }
+  constructor() {}
 
-  ngOnInit() {
+  public setName(name: string) {
+    this.appName = name;
   }
 
   public getName() {

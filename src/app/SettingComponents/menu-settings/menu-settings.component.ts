@@ -9,13 +9,13 @@ import { Page } from '../../Objects/PageObject';
 })
 export class MenuSettingsComponent {
 
-  private linkName: string;
-  private tabId: string;
-  private pages = Array<Page>();
-  private selected: string;
+  linkName: string;
+  tabId: string;
+  pages = Array<Page>();
+  selected: string;
 
-  private disabledLeftButton = false;
-  private disabledRightButton = false;
+  disabledLeftButton = false;
+  disabledRightButton = false;
 
   constructor(private conf: Configuration) { 
     conf.getPages().forEach(element => {

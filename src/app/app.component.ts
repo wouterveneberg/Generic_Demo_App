@@ -34,11 +34,11 @@ import { CardComponent } from './Components/card/card.component';
 export class AppComponent {
   title = 'app';
   pages: Array<Page>;
-  private currentPageRef: ComponentRef<PageComponent>;
-  private currentPage: Page;
-  private selectedMenu: string;
+  currentPageRef: ComponentRef<PageComponent>;
+  currentPage: Page;
+  selectedMenu: string;
 
-  private beginTabs: Array<MenuItem>;
+  beginTabs: Array<MenuItem>;
 
   show = false;
 

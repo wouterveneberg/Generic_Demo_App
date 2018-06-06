@@ -19,7 +19,7 @@ export class ImageComponent implements BaseComponentComponent {
   image: any;
   imageName: string;
 
-  constructor(private conf: Configuration, private sanitizer: DomSanitizer) { }
+  constructor(private conf: Configuration, public sanitizer: DomSanitizer) { }
 
   setAttributes(comp, compRef) {
     this.componentInstace = comp;
